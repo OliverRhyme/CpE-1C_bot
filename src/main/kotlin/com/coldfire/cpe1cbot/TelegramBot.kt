@@ -1,11 +1,9 @@
 package com.coldfire.cpe1cbot
 
 import com.elbekD.bot.Bot
-import com.elbekD.bot.server
-import java.util.regex.Pattern
 
 
-fun main(args: Array<String>) {
+fun main() {
     val token = "1360445525:AAHqvf4oHVFf2sw1GBvqJCg22BOBS95JGF0"
     val username = "@OliverRhyme_bot"
     val bot = Bot.createPolling(username, token)
@@ -16,8 +14,7 @@ fun main(args: Array<String>) {
         bot.sendMessage(msg.chat.id, "Si Leomar")
     }
     bot.onMessage {
-        val matcher = it.text?.toLowerCase()
-        when (matcher) {
+        when (val matcher = it.text?.toLowerCase()) {
             "goodmorning", "ohaiyo" -> {
                 bot.sendMessage(it.chat.id, "Goodmorning!! Start your day with a cup of coffee!")
             }

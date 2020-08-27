@@ -1,0 +1,1 @@
+web: java -jar build/libs/CpE-1C_bot-*-all.jar

@@ -20,7 +20,7 @@ fun main() {
             }
             else -> {
                 matcher?.let { swear ->
-                    if (Regex("\\b(yawa|pota)\\b").containsMatchIn(swear)) {
+                    if (Regex("\\b(y([a@])wa|p[0o][t+][a@])\\b").containsMatchIn(swear)) {
                         bot.sendMessage(it.chat.id, "Don't say bad words God is watching you")
                     }
                 }

@@ -8,7 +8,7 @@ import java.util.regex.Pattern
 fun main(args: Array<String>) {
     val token = "1360445525:AAHqvf4oHVFf2sw1GBvqJCg22BOBS95JGF0"
     val username = "@OliverRhyme_bot"
-    val bot = Bot.createWebhook(username, token)
+    val bot = Bot.createPolling(username, token)
     bot.onCommand("/start") { msg, _ ->
         bot.sendMessage(msg.chat.id, "Hello mga maderpaker!")
     }

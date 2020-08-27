@@ -28,8 +28,12 @@ tasks {
         minimize()
         manifest {
             attributes(mapOf("Main-Class" to "com.coldfire.cpe1cbot.TelegramBotKt"))
-
         }
+        mustRunAfter(build)
     }
-
+    task("stage") {
+        dependsOn(shadowJar, clean)
+    }
 }
+
+

@@ -1,5 +1,7 @@
 plugins {
     kotlin("jvm") version "1.4.0"
+    id("com.github.johnrengelman.shadow") version "6.0.0"
+    java
 }
 
 group = "com.coldfire"
@@ -22,4 +24,12 @@ tasks {
     compileTestKotlin {
         kotlinOptions.jvmTarget = "1.8"
     }
+    shadowJar {
+        minimize()
+        manifest {
+            attributes(mapOf("Main-Class" to "com.coldfire.cpe1cbot.TelegramBotKt"))
+
+        }
+    }
+
 }

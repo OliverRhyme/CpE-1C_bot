@@ -1,11 +1,10 @@
 plugins {
     kotlin("jvm") version "1.4.0"
     id("com.github.johnrengelman.shadow") version "6.0.0"
-    java
 }
 
 group = "com.coldfire"
-version = "1.0-SNAPSHOT"
+version = "0.9"
 
 repositories {
     mavenCentral()

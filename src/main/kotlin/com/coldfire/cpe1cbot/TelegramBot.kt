@@ -3,11 +3,19 @@ package com.coldfire.cpe1cbot
 import com.elbekD.bot.Bot
 import com.elbekD.bot.server
 import com.elbekD.bot.types.WebhookInfo
+import spark.kotlin.port
 
 
 fun main() {
     val token = "1360445525:AAHqvf4oHVFf2sw1GBvqJCg22BOBS95JGF0"
     val username = "@OliverRhyme_bot"
+
+    val portNumber = System.getenv("PORT")
+    portNumber?.let {
+        port(Integer.parseInt(portNumber))
+    }
+
+
     val bot = Bot.createPolling(username, token)
 //        this.url = "https://cpe1c-bot.herokuapp.com/"
 //

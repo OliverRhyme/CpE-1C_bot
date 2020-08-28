@@ -9,11 +9,11 @@ import com.github.kotlintelegrambot.extensions.filters.Filter
 
 
 fun main() {
-    val token = "1360445525:AAHqvf4oHVFf2sw1GBvqJCg22BOBS95JGF0"
-    val username = "@OliverRhyme_bot"
+    val token = "1389196479:AAECgubxkPmS8bf3QKn-WeGnuf3STjd2TFw"
 
     val creditsMessage = """
                         This bot is written by:
+                        
                         Oliver Rhyme G. Añasco
                         
                         📧 oliverrhyme.anasco@g.msuiit.edu.ph

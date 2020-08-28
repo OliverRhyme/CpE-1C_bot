@@ -1,11 +1,11 @@
 package com.coldfire.cpe1cbot
 
-class SwearDetector {
+class SwearDetector(swearList: List<String>) {
 
     private val swearRegex: Regex
 
     init {
-        swearRegex = getProcessedRegex()
+        swearRegex = getProcessedRegex(swearList)
     }
 
 //    private fun getProcessedSwearList(): List<String> {
@@ -32,9 +32,9 @@ class SwearDetector {
 //    }
 
 
-    private fun getProcessedRegex(): Regex {
+    private fun getProcessedRegex(swearList: List<String>): Regex {
 //        val swearList = getProcessedSwearList()
-        val swearList = Constants.swearList
+//        val swearList = Constants.swearList
 
         val regexPattern = swearList.joinToString(
             prefix = "(",

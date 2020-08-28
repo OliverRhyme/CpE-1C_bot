@@ -10,7 +10,7 @@ import com.github.kotlintelegrambot.extensions.filters.Filter
 
 fun main() {
 
-    val swearDetector = SwearDetector()
+    val swearDetector = SwearDetector(Constants.swearList)
 
     val bot = bot {
         this.token = Constants.TOKEN

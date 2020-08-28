@@ -12,7 +12,6 @@ fun main() {
 
     val swearDetector = SwearDetector()
 
-
     val bot = bot {
         this.token = Constants.TOKEN
 
@@ -21,7 +20,8 @@ fun main() {
             command("credits") { bot, update ->
                 update.message?.chat?.id?.let {
                     bot.sendMessage(
-                        it, BotMessages.creditsMessage,
+                        it,
+                        BotMessages.creditsMessage,
                         disableWebPagePreview = true,
                         parseMode = ParseMode.HTML
                     )
@@ -32,11 +32,7 @@ fun main() {
                 // TODO migrate to BotMessages
                 update.message?.chat?.id?.let {
                     bot.sendMessage(
-                        it, """
-                        Welcome this bot will answer you FAQ
-                        please refer to commands you can try below
-                        
-                    """.trimIndent()
+                        it, BotMessages.startMessage
                     )
                 }
             }
@@ -46,11 +42,11 @@ fun main() {
 
                 when (message.text?.toLowerCase()) {
                     "goodmorning", "ohaiyo" -> {
-                        bot.sendMessage(message.chat.id, "Goodmorning!! Start your day with a cup of coffee!")
+                        bot.sendMessage(message.chat.id, BotMessages.morningMessage)
                     }
                     else -> {
                         if (swearDetector.hasSwear(message.text)) {
-                            bot.sendMessage(message.chat.id, "Don't say bad words God is watching you")
+                            bot.sendMessage(message.chat.id, BotMessages.swearMessage)
                         }
                     }
                 }

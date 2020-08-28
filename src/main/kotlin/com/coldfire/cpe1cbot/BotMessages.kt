@@ -25,4 +25,13 @@ object BotMessages {
                         <a href = "https://github.com/kotlin-telegram-bot/kotlin-telegram-bot">Kotlin Telegram Bot</a>
 
                     """.trimIndent()
+
+    val startMessage = """
+                        Welcome this bot will answer you FAQ
+                        please refer to commands you can try below
+                        
+                    """.trimIndent()
+
+    const val swearMessage = "Don't say bad words God is watching you"
+    const val morningMessage = "Goodmorning!! Start your day with a cup of coffee!"
 }

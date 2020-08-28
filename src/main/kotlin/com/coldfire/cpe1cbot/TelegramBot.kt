@@ -19,12 +19,15 @@ fun main() {
                         📧 oliverrhyme.anasco@g.msuiit.edu.ph
                         <a href = "https://fb.me/oliver.rhyme">Facebook</a>
                         <a href="tg://user?id=640358656">Telegram</a>
+                        <a href="https://github.com/OliverRhyme">Github</a>
                         
                         Leomar T. Villaruel
                         
                         📧 leomart.villaruel@gmail.com
                         <a href = "https://fb.me/leomar.villareal.1">Facebook</a>
                         <a href="tg://user?id=1302941940">Telegram</a>
+                        <a href="https://github.com/LeomarVillaruel">Github</a>
+
                         
                         100% written in Kotlin with 💖
                         
@@ -69,7 +72,7 @@ fun main() {
                     }
                     else -> {
                         matcher?.let { swear ->
-                            if (Regex("\\b(y([a@])w[a@]|p[0o][t+][a@])\\b").containsMatchIn(swear)) {
+                            if (Regex("(y([a@])w[a@]|p[0o][t+][a@])").containsMatchIn(swear)) {
                                 bot.sendMessage(message.chat.id, "Don't say bad words God is watching you")
                             }
                         }

@@ -8,8 +8,6 @@ import com.github.kotlintelegrambot.entities.ParseMode
 import com.github.kotlintelegrambot.extensions.filters.Filter
 
 
-
-
 fun main() {
     val token = "1360445525:AAHqvf4oHVFf2sw1GBvqJCg22BOBS95JGF0"
     val username = "@OliverRhyme_bot"
@@ -26,7 +24,7 @@ fun main() {
                         
                         📧 leomart.villaruel@gmail.com
                         <a href = "https://fb.me/leomar.villareal.1">Facebook</a>
-                        <a href="tg://user?id=640358656">Telegram</a>
+                        <a href="tg://user?id=1302941940">Telegram</a>
                         
                         100% written in Kotlin with 💖
                         

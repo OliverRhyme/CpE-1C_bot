@@ -14,8 +14,9 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    implementation("com.github.elbekD:kt-telegram-bot:1.3.5")
-    implementation("com.sparkjava:spark-kotlin:1.0.0-alpha")
+//    implementation("com.github.elbekD:kt-telegram-bot:1.3.5")
+//    implementation("com.sparkjava:spark-kotlin:1.0.0-alpha")
+    implementation("io.github.kotlin-telegram-bot.kotlin-telegram-bot:telegram:5.0.0")
 }
 
 tasks {

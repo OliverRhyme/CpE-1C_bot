@@ -1,47 +1,50 @@
 package com.coldfire.cpe1cbot
 
-import com.elbekD.bot.Bot
-
+import com.github.kotlintelegrambot.bot
+import com.github.kotlintelegrambot.dispatch
+import com.github.kotlintelegrambot.dispatcher.command
+import com.github.kotlintelegrambot.dispatcher.message
+import com.github.kotlintelegrambot.extensions.filters.Filter
 
 fun main() {
     val token = "1360445525:AAHqvf4oHVFf2sw1GBvqJCg22BOBS95JGF0"
     val username = "@OliverRhyme_bot"
 
-    val bot = Bot.createPolling(username, token)
+    val bot = bot {
+        this.token = token
 
-    bot.onCommand("/test") { msg, _ ->
-        bot.sendMessage(msg.chat.id, "${System.getenv("PORT")} test")
-    }
-
-    bot.onCommand("/start") { msg, _ ->
-        bot.sendMessage(msg.chat.id, "test")
-    }
-    bot.onCommand("/weak") { msg, _ ->
-        bot.sendMessage(msg.chat.id, "Si Leomar")
-    }
-
-    bot.onCommand("/master") { msg, _ ->
-        bot.sendMessage(msg.chat.id, "Si Oliver and Leomar")
-    }
-
-
-
-    bot.onMessage {
-        when (val matcher = it.text?.toLowerCase()) {
-            "goodmorning", "ohaiyo" -> {
-                bot.sendMessage(it.chat.id, "Goodmorning!! Start your day with a cup of coffee!")
+        dispatch {
+            command("start") { bot, update ->
+                update.message?.chat?.id?.let {
+                    bot.sendMessage(
+                        it, """
+                        Welcome this bot will answer you FAQ
+                        please refer to commands you can try below
+                        
+                    """.trimIndent()
+                    )
+                }
             }
-            else -> {
-                matcher?.let { swear ->
-                    if (Regex("\\b(y([a@])w[a@]|p[0o][t+][a@])\\b").containsMatchIn(swear)) {
-                        bot.sendMessage(it.chat.id, "Don't say bad words God is watching you")
+            message(Filter.Text and Filter.Group) { bot, update ->
+                val message = update.message ?: return@message
+                when (val matcher = message.text?.toLowerCase()) {
+                    "goodmorning", "ohaiyo" -> {
+                        bot.sendMessage(message.chat.id, "Goodmorning!! Start your day with a cup of coffee!")
+                    }
+                    else -> {
+                        matcher?.let { swear ->
+                            if (Regex("\\b(y([a@])w[a@]|p[0o][t+][a@])\\b").containsMatchIn(swear)) {
+                                bot.sendMessage(message.chat.id, "Don't say bad words God is watching you")
+                            }
+                        }
+
                     }
                 }
-
             }
+
         }
     }
-    bot.start()
+    bot.startPolling()
 
 }
 

@@ -49,7 +49,11 @@ fun main() {
 
                 when (message.text?.toLowerCase()) {
                     "goodmorning", "ohayo" -> {
-                        bot.sendMessage(message.chat.id, BotMessages.morningMessage)
+                        bot.sendMessage(
+                            message.chat.id, String.format(
+                                BotMessages.morningMessage, message.from?.firstName ?: "po"
+                            )
+                        )
                     }
                     else -> {
                         if (swearDetector.hasSwear(message.text)) {

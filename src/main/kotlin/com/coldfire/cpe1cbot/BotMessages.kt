@@ -44,5 +44,5 @@ object BotMessages {
                                 """.trimIndent()
 
     const val swearMessage = "Don't say bad words God is watching you"
-    const val morningMessage = "Goodmorning!! Start your day with a cup of coffee!"
+    const val morningMessage = "Goodmorning %s!! Start your day with a cup of coffee!"
 }

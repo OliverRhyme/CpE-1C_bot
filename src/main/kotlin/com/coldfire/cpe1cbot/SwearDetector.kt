@@ -62,6 +62,6 @@ class SwearDetector(swearList: List<String>) {
     // TODO decouple and incorporate leet
     fun hasSwear(text: String?): Boolean {
         return if (text.isNullOrBlank()) false
-        else swearRegex.containsMatchIn(text)
+        else swearRegex.containsMatchIn(text.toLowerCase())
     }
 }

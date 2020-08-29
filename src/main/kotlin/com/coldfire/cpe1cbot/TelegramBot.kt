@@ -48,7 +48,7 @@ fun main() {
                 val message = update.message ?: return@message
 
                 when (message.text?.toLowerCase()) {
-                    "goodmorning", "ohaiyo" -> {
+                    "goodmorning", "ohayo" -> {
                         bot.sendMessage(message.chat.id, BotMessages.morningMessage)
                     }
                     else -> {

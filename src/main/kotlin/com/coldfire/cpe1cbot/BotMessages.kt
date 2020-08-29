@@ -42,7 +42,10 @@ object BotMessages {
                                 Please adhere to this group chat rules and regulation.
                                 
                                 """.trimIndent()
-
+    val adviceMessage = """
+                                Drink 8 glass of water.
+                                Stay hydrated.
+    """.trimIndent()
     const val swearMessage = "Don't say bad words God is watching you"
     const val morningMessage = "Goodmorning %s!! Start your day with a cup of coffee!"
 }

@@ -35,7 +35,13 @@ fun main() {
                     )
                 }
             }
-
+            command("advice") { bot, update ->
+                update.message?.chat?.id?.let {
+                    bot.sendMessage(
+                        it, BotMessages.adviceMessage
+                    )
+                }
+            }
             command("announcement") { bot, update ->
                 update.message?.chat?.id?.let {
                     bot.sendMessage(

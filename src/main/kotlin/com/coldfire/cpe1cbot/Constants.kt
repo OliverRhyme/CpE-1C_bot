@@ -36,7 +36,8 @@ object Constants {
         "yawa",
         "gago",
         "fuck",
-        "pakyo"
+        "pakyo",
+        "pota"
     )
 
 }

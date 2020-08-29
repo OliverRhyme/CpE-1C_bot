@@ -29,10 +29,17 @@ fun main() {
             }
 
             command("start") { bot, update ->
-                // TODO migrate to BotMessages
                 update.message?.chat?.id?.let {
                     bot.sendMessage(
                         it, BotMessages.startMessage
+                    )
+                }
+            }
+
+            command("announcement") { bot, update ->
+                update.message?.chat?.id?.let {
+                    bot.sendMessage(
+                        it, BotMessages.announcementMessage
                     )
                 }
             }
@@ -49,6 +56,21 @@ fun main() {
                             bot.sendMessage(message.chat.id, BotMessages.swearMessage)
                         }
                     }
+                }
+            }
+
+            message(Filter.Group and Filter.Custom { newChatMember != null }) { bot, update ->
+                val message = update.message ?: return@message
+
+                message.newChatMember?.let {
+                    if (it.isBot) return@let
+
+                    bot.sendMessage(
+                        message.chat.id, String.format(
+                            BotMessages.newMemberMessage, it.id, "${it.firstName} ${it.lastName}"
+                        ),
+                        parseMode = ParseMode.HTML
+                    )
                 }
             }
 

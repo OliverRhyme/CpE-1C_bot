@@ -30,7 +30,18 @@ object BotMessages {
                         Welcome this bot will answer you FAQ
                         please refer to commands you can try below
                         
-                    """.trimIndent()
+                            """.trimIndent()
+
+    val announcementMessage = """
+                                        There are currently no announcement
+                        
+                                    """.trimIndent()
+
+    val newMemberMessage = """
+                                Welcome to CpE-1C group chat <a href="tg://user?id=%d">%s</a>.
+                                Please adhere to this group chat rules and regulation.
+                                
+                                """.trimIndent()
 
     const val swearMessage = "Don't say bad words God is watching you"
     const val morningMessage = "Goodmorning!! Start your day with a cup of coffee!"

@@ -39,5 +39,10 @@ object Constants {
         "pakyo",
         "pota"
     )
-
+    val morningList = listOf<String>(
+        "goodmorning",
+        "morning",
+        "ohayo",
+        "ohaiyo"
+    )
 }

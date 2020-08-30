@@ -35,7 +35,13 @@ fun main() {
                     )
                 }
             }
-
+            command("advice") { bot, update ->
+                update.message?.chat?.id?.let {
+                    bot.sendMessage(
+                        it, BotMessages.adviceMessage
+                    )
+                }
+            }
             command("announcement") { bot, update ->
                 update.message?.chat?.id?.let {
                     bot.sendMessage(
@@ -48,8 +54,12 @@ fun main() {
                 val message = update.message ?: return@message
 
                 when (message.text?.toLowerCase()) {
-                    "goodmorning", "ohaiyo" -> {
-                        bot.sendMessage(message.chat.id, BotMessages.morningMessage)
+                    "goodmorning", "ohayo" -> {
+                        bot.sendMessage(
+                            message.chat.id, String.format(
+                                BotMessages.morningMessage, message.from?.firstName ?: "po"
+                            )
+                        )
                     }
                     else -> {
                         if (swearDetector.hasSwear(message.text)) {

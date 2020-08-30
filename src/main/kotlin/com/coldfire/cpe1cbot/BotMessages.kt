@@ -33,7 +33,7 @@ object BotMessages {
                             """.trimIndent()
 
     val announcementMessage = """
-                                        There are currently no announcement
+                                        There are currently no announcement please stay tuned for updates.
                         
                                     """.trimIndent()
 

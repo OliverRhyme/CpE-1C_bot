@@ -1,5 +1,7 @@
 package com.coldfire.cpe1cbot
 
+import java.util.*
+
 object BotMessages {
     val creditsMessage = """
                         This bot is written by:
@@ -23,6 +25,8 @@ object BotMessages {
                         
                         Library used:
                         <a href = "https://github.com/kotlin-telegram-bot/kotlin-telegram-bot">Kotlin Telegram Bot</a>
+                        
+                        CpE-1C Telegram Bot V${getVersion()}
 
                     """.trimIndent()
 
@@ -48,4 +52,11 @@ object BotMessages {
     """.trimIndent()
     const val swearMessage = "Don't say bad words God is watching you"
     const val morningMessage = "Goodmorning %s!! Start your day with a cup of coffee!"
+
+    private fun getVersion(): String {
+        val properties = Properties()
+        properties.load(javaClass.classLoader.getResourceAsStream("version.properties"))
+
+        return properties.getProperty("version")
+    }
 }

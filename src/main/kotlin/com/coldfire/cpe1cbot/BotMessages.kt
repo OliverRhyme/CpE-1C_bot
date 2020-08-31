@@ -48,7 +48,7 @@ object BotMessages {
                                 """.trimIndent()
     val adviceMessage = """
                                 Drink 8 glass of water.
-                                Stay hydrated.
+                                Stay hydrated and don't forget to always smile :)
     """.trimIndent()
     const val swearMessage = "Don't say bad words God is watching you"
     const val morningMessage = "Goodmorning %s!! Start your day with a cup of coffee!"
